@@ -1,0 +1,51 @@
+---
+swagger: '2.0'
+info:
+  title: ToDo List
+  version: v1
+paths:
+  "/api/v1/users":
+    post:
+      summary: create user
+      tags:
+      - Users
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: user
+        in: body
+        schema:
+          type: object
+          properties:
+            user:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                password_confirmation:
+                  type: string
+                nickname:
+                  type: string
+          example:
+            user:
+              email: test@gmail.com
+              password: P@ssw0rd
+              password_confirmation: P@ssw0rd
+              nickname: Test
+          required:
+          - email
+          - password
+          - password_confirmation
+          - nickname
+      responses:
+        '201':
+          description: user created
+servers:
+- url: http://{host}
+  variables:
+    host:
+      default: localhost:3000

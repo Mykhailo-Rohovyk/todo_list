@@ -1,0 +1,27 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.1.0
+  NewCops: enable
+  inherit_mode: merge
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*
+
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - spec/requests/api/v1/*

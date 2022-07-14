@@ -1,0 +1,6 @@
+ignore_unused_routes:
+  - ^active_storage*
+  - ^rails/conductor/action_mailbox*
+ignore_unreachable_actions:
+  - ^active_storage*
+  - ^rails/conductor/action_mailbox*
